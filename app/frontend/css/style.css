@@ -1,0 +1,321 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  margin: 0;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-container {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.auth-container h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #005f73;
+}
+
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-container input {
+  padding: 12px 14px;
+  margin-bottom: 20px;
+  border: 1.5px solid #0a9396;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.auth-container input:focus {
+  border-color: #005f73;
+}
+
+.auth-container button {
+  padding: 12px;
+  background-color: #0a9396;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.auth-container button:hover {
+  background-color: #007a7c;
+}
+
+.auth-container p {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.auth-container a {
+  color: #005f73;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-container a:hover {
+  text-decoration: underline;
+}
+
+header {
+  background-color: #005f73;
+  color: #fff;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+header div button {
+  background-color: #0a9396;
+  border: none;
+  color: #fff;
+  padding: 10px 16px;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+header div button:hover {
+  background-color: #94d2bd;
+  color: #003d33;
+}
+
+section {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+h2 {
+  margin-bottom: 15px;
+  color: #001219;
+  font-weight: 700;
+}
+
+#merch-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.merch-item {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  width: 180px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.merch-item:hover {
+  transform: translateY(-5px);
+}
+
+.merch-item img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.merch-item h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+  text-align: center;
+  color: #005f73;
+}
+
+.merch-item p {
+  margin: 4px 0;
+  font-size: 0.9rem;
+  color: #333;
+  text-align: center;
+}
+
+.buy-btn {
+  margin-top: auto;
+  padding: 8px 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  background-color: #0a9396;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buy-btn:disabled {
+  background-color: #94d2bd;
+  cursor: not-allowed;
+}
+
+.buy-btn:not(:disabled):hover {
+  background-color: #005f73;
+}
+
+#admin-panel {
+  background-color: #e0fbfc;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  max-width: 400px;
+  margin: 30px auto;
+}
+
+#admin-add-form input {
+  display: block;
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1.5px solid #005f73;
+  font-size: 1rem;
+  color: #001219;
+}
+
+#admin-add-form button {
+  background-color: #005f73;
+  color: #fff;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+
+#admin-add-form button:hover {
+  background-color: #0a9396;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background-color: #fff;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 450px;
+  padding: 20px 30px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+  position: relative;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #555;
+  transition: color 0.2s ease;
+}
+
+.close-modal:hover {
+  color: #000;
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  color: #005f73;
+  text-align: center;
+}
+
+.modal-content p {
+  margin: 10px 0;
+  font-size: 1rem;
+}
+
+#user-merch-list {
+  list-style: none;
+  max-height: 150px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #fafafa;
+}
+
+#user-merch-list li {
+  padding: 6px 8px;
+  border-bottom: 1px solid #eee;
+  font-size: 0.95rem;
+}
+
+#user-merch-list li:last-child {
+  border-bottom: none;
+}
+
+#transfer-form input {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 15px;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+#transfer-form button {
+  width: 100%;
+  padding: 10px 0;
+  background-color: #0a9396;
+  color: white;
+  border: none;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#transfer-form button:hover {
+  background-color: #04bfc2;
+}

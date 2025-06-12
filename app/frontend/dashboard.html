@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Магазин мерча</title>
+  <link rel="stylesheet" href="/frontend/css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Магазин мерча</h1>
+    <div>
+      <button id="admin-btn" style="display: none;" onclick="openAdminModal()">Админ-панель</button>
+      <button onclick="showProfile()">Обо мне</button>
+      <button onclick="openTransferModal()">Поделиться</button>
+      <button onclick="logout()">Выйти</button>
+    </div>
+  </header>
+
+  <section id="merch-section">
+    <h2>Доступный мерч</h2>
+    <div id="merch-container"></div>
+  </section>
+
+  <div class="modal" id="admin-modal" style="display: none;">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeModal('admin-modal')">&times;</span>
+    <h3>Админ-панель</h3>
+    <form id="admin-add-form">
+      <input type="text" name="name" placeholder="Название" required>
+      <input type="text" name="description" placeholder="Описание" required>
+      <input type="number" name="price" placeholder="Цена (coin)" required>
+      <input type="number" name="quantity_available" placeholder="Количество" required>
+      <input type="text" name="image_url" placeholder="URL изображения">
+      <button type="submit">Добавить мерч</button>
+    </form>
+    <div id="admin-merch-list"></div>
+  </div>
+</div>
+
+  <!-- Модалка: Профиль -->
+  <div class="modal" id="profile-modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('profile-modal')">&times;</span>
+      <h3>Обо мне</h3>
+      <p><strong>Email:</strong> <span id="profile-email"></span></p>
+      <p><strong>Монет:</strong> <span id="profile-coins"></span></p>
+      <h4>Ваш мерч:</h4>
+      <ul id="user-merch-list"></ul>
+    </div>
+  </div>
+
+  <div class="modal" id="edit-modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('edit-modal')">&times;</span>
+      <h3>Редактировать товар</h3>
+      <form id="edit-form">
+        <input type="hidden" name="id">
+        <input type="text" name="name" placeholder="Название" required>
+        <input type="text" name="description" placeholder="Описание" required>
+        <input type="number" name="price" placeholder="Цена (coin)" required>
+        <input type="number" name="quantity_available" placeholder="Количество" required>
+        <input type="text" name="image_url" placeholder="URL изображения">
+        <button type="submit">Сохранить</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Модалка: Перевод монет -->
+  <div class="modal" id="transfer-modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('transfer-modal')">&times;</span>
+      <h3>Передать монеты</h3>
+      <form id="transfer-form">
+        <input type="email" name="receiver_email" placeholder="Email получателя" required>
+        <input type="number" name="amount" placeholder="Сколько монет?" required>
+        <button type="submit">Отправить</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="/frontend/js/main.js"></script>
+</body>
+</html>
